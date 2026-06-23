@@ -1,8 +1,8 @@
-\# Backend Configuration
+# Backend Configuration
 
 
 
-\## 1. Goal
+## 1. Goal
 
 
 
@@ -14,7 +14,7 @@ The project currently uses Ollama as the local backend. In the future, the backe
 
 
 
-\## 2. Configuration File
+## 2. Configuration File
 
 
 
@@ -32,7 +32,7 @@ LLM\_API\_KEY = os.getenv("LLM\_API\_KEY", "ollama")
 
 LLM\_MODEL = os.getenv("LLM\_MODEL", "qwen2.5:0.5b")
 
-\## 3. Local Ollama Configuration
+## 3. Local Ollama Configuration
 
 PowerShell:
 
@@ -41,7 +41,7 @@ $env:LLM_BASE_URL="http://localhost:11434/v1"
 $env:LLM_API_KEY="ollama"
 $env:LLM_MODEL="qwen2.5:0.5b"
 
-\## 4. Future vLLM Configuration
+## 4. Future vLLM Configuration
 
 PowerShell:
 
@@ -50,7 +50,7 @@ $env:LLM_BASE_URL="http://SERVER_IP:8000/v1"
 $env:LLM_API_KEY="EMPTY"
 $env:LLM_MODEL="Qwen/Qwen2.5-1.5B-Instruct"
 
-\## 5. Check Backend
+## 5. Check Backend
 
 Run:
 
@@ -58,7 +58,7 @@ python check_backend.py
 
 This script prints the current backend configuration and checks the /models endpoint.
 
-\## 6. Why This Matters
+## 6. Why This Matters
 
 Separating configuration from code makes the project easier to migrate from Ollama to vLLM.
 
