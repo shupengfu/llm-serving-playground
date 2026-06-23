@@ -88,35 +88,19 @@ The goal is to compare inference latency and throughput across different model s
 
 ## 3. Models Tested
 
-
-
 | Model                      | Backend | GPU       | Max Model Length |
-
-| --------------------------: | -------: | ---------: | ---------------: |
-
+| -------------------------- | ------- | --------- | ---------------: |
 | Qwen/Qwen2.5-1.5B-Instruct | vLLM    | RTX 4090D |             8192 |
-
 | Qwen/Qwen2.5-7B-Instruct   | vLLM    | RTX 4090D |             4096 |
-
-
-
----
-
-
 
 ## 4. Qwen2.5-1.5B Benchmark Result
 
-
-
 | Concurrency | Requests | Success | Failed | Avg Latency (s) | P50 (s) | P95 (s) |    QPS |
-
 | ----------: | -------: | ------: | -----: | --------------: | ------: | ------: | -----: |
-
 |           1 |        3 |       3 |      0 |          0.4207 |  0.3963 |  0.4681 | 2.3732 |
-
 |           2 |        4 |       4 |      0 |          0.5219 |  0.5512 |  0.6217 | 3.6233 |
-
 |           4 |        4 |       4 |      0 |          0.4632 |  0.4702 |  0.4839 | 8.2149 |
+
 
 
 
