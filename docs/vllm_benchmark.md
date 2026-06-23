@@ -1,8 +1,8 @@
-\# vLLM Benchmark Results
+# vLLM Benchmark Results
 
 
 
-\## 1. Goal
+## 1. Goal
 
 
 
@@ -42,51 +42,51 @@ The goal is to compare inference latency and throughput across different model s
 
 
 
-\---
+---
 
 
 
-\## 2. Environment
+## 2. Environment
 
 
 
-\### Local Side
+### Local Side
 
 
 
-\* OS: Windows
+* OS: Windows
 
-\* Application Server: FastAPI
+* Application Server: FastAPI
 
-\* Client: Python requests
+* Client: Python requests
 
-\* API format: OpenAI-compatible API
+* API format: OpenAI-compatible API
 
-\* Endpoint: `/chat`
-
-
-
-\### Cloud Side
+* Endpoint: `/chat`
 
 
 
-\* GPU: NVIDIA GeForce RTX 4090D
-
-\* GPU Memory: 24GB
-
-\* Backend: vLLM
-
-\* Connection: SSH tunnel
-
-\* API server: vLLM OpenAI-compatible server
+### Cloud Side
 
 
 
-\---
+* GPU: NVIDIA GeForce RTX 4090D
+
+* GPU Memory: 24GB
+
+* Backend: vLLM
+
+* Connection: SSH tunnel
+
+* API server: vLLM OpenAI-compatible server
 
 
 
-\## 3. Models Tested
+---
+
+
+
+## 3. Models Tested
 
 
 
@@ -100,11 +100,11 @@ The goal is to compare inference latency and throughput across different model s
 
 
 
-\---
+---
 
 
 
-\## 4. Qwen2.5-1.5B Benchmark Result
+## 4. Qwen2.5-1.5B Benchmark Result
 
 
 
@@ -120,11 +120,11 @@ The goal is to compare inference latency and throughput across different model s
 
 
 
-\---
+---
 
 
 
-\## 5. Qwen2.5-7B Benchmark Result
+## 5. Qwen2.5-7B Benchmark Result
 
 
 
@@ -140,11 +140,11 @@ The goal is to compare inference latency and throughput across different model s
 
 
 
-\---
+---
 
 
 
-\## 6. GPU Memory Usage
+## 6. GPU Memory Usage
 
 
 
@@ -168,11 +168,11 @@ This memory usage includes model weights, KV cache allocation, CUDA runtime memo
 
 
 
-\---
+---
 
 
 
-\## 7. Analysis
+## 7. Analysis
 
 
 
@@ -212,11 +212,11 @@ At the same time, vLLM can still improve serving efficiency through GPU accelera
 
 
 
-\---
+---
 
 
 
-\## 8. Conclusion
+## 8. Conclusion
 
 
 
