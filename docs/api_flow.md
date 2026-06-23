@@ -9,8 +9,6 @@ The current backend is Ollama, and the model is qwen2.5:1.5b.
 In the future, the backend can be replaced by vLLM without changing most application-level code.
 
 ## 2. System Architecture
-
-```text
 Python Application
     ↓
 OpenAI SDK or raw HTTP request
