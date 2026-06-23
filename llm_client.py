@@ -1,16 +1,35 @@
 from openai import OpenAI
-import os
+
+from config import (
+    LLM_BACKEND,
+    LLM_BASE_URL,
+    LLM_API_KEY,
+    LLM_MODEL,
+    LLM_REQUEST_TIMEOUT,
+)
 
 
-BASE_URL = os.getenv("LLM_BASE_URL", "http://localhost:11434/v1")
-API_KEY = os.getenv("LLM_API_KEY", "ollama")
-MODEL = os.getenv("LLM_MODEL", "qwen2.5:0.5b")
+# 为了兼容之前其他文件里的 import
+BACKEND = LLM_BACKEND
+BASE_URL = LLM_BASE_URL
+API_KEY = LLM_API_KEY
+MODEL = LLM_MODEL
 
 
 client = OpenAI(
     base_url=BASE_URL,
-    api_key=API_KEY
+    api_key=API_KEY,
+    timeout=LLM_REQUEST_TIMEOUT,
 )
+
+
+def get_backend_info():
+    return {
+        "backend": BACKEND,
+        "base_url": BASE_URL,
+        "model": MODEL,
+        "timeout": LLM_REQUEST_TIMEOUT,
+    }
 
 
 def chat(messages, temperature=0.7, max_tokens=500):
@@ -18,7 +37,7 @@ def chat(messages, temperature=0.7, max_tokens=500):
         model=MODEL,
         messages=messages,
         temperature=temperature,
-        max_tokens=max_tokens
+        max_tokens=max_tokens,
     )
 
     return response.choices[0].message.content
@@ -30,10 +49,13 @@ def stream_chat(messages, temperature=0.7, max_tokens=500):
         messages=messages,
         temperature=temperature,
         max_tokens=max_tokens,
-        stream=True
+        stream=True,
     )
 
     for chunk in stream:
-        delta = chunk.choices[0].delta.content
-        if delta:
-            yield delta
+        try:
+            delta = chunk.choices[0].delta.content
+            if delta:
+                yield delta
+        except Exception:
+            continue

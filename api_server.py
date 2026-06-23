@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from llm_client import chat, stream_chat, BASE_URL, MODEL
+from llm_client import chat, stream_chat, get_backend_info
 
 
 app = FastAPI(
@@ -34,8 +34,7 @@ class ChatResponse(BaseModel):
 def health_check():
     return {
         "status": "ok",
-        "backend_base_url": BASE_URL,
-        "model": MODEL
+        "backend_info": get_backend_info()
     }
 
 
@@ -56,8 +55,10 @@ def chat_endpoint(request: ChatRequest):
             max_tokens=request.max_tokens
         )
 
+        backend_info = get_backend_info()
+
         return ChatResponse(
-            model=MODEL,
+            model=backend_info["model"],
             answer=answer
         )
 
