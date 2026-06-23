@@ -1,49 +1,26 @@
-### OpenAI-compatible API Flow
+# OpenAI-compatible API Flow
 
-
-
-
-
-#### 1\. Project Goal
-
-
+## 1. Project Goal
 
 This project demonstrates how to call a locally deployed LLM through an OpenAI-compatible API.
 
-
-
 The current backend is Ollama, and the model is qwen2.5:1.5b.
-
-
 
 In the future, the backend can be replaced by vLLM without changing most application-level code.
 
+## 2. System Architecture
 
-
-
-
-#### &#x20;2. System Architecture
-
+```text
 Python Application
-
-&#x20;   ↓
-
+    ↓
 OpenAI SDK or raw HTTP request
-
-&#x20;   ↓
-
+    ↓
 OpenAI-compatible API
-
-&#x20;   ↓
-
+    ↓
 Ollama local server
-
-&#x20;   ↓
-
+    ↓
 qwen2.5:1.5b model
-
-&#x20;   ↓
-
+    ↓
 Generated response
 
 
