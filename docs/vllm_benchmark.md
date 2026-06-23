@@ -18,19 +18,19 @@ The tested pipeline is:
 
 Windows FastAPI Server
 
-&#x20;   ↓
+   ↓
 
 SSH Tunnel
 
-&#x20;   ↓
+   ↓
 
 Cloud vLLM Server
 
-&#x20;   ↓
+   ↓
 
 RTX 4090D
 
-&#x20;   ↓
+   ↓
 
 Qwen2.5 Instruct Model
 
@@ -54,15 +54,15 @@ The goal is to compare inference latency and throughput across different model s
 
 
 
-* OS: Windows
+\* OS: Windows
 
-* Application Server: FastAPI
+\* Application Server: FastAPI
 
-* Client: Python requests
+\* Client: Python requests
 
-* API format: OpenAI-compatible API
+\* API format: OpenAI-compatible API
 
-* Endpoint: `/chat`
+\* Endpoint: `/chat`
 
 
 
@@ -70,15 +70,15 @@ The goal is to compare inference latency and throughput across different model s
 
 
 
-* GPU: NVIDIA GeForce RTX 4090D
+\* GPU: NVIDIA GeForce RTX 4090D
 
-* GPU Memory: 24GB
+\* GPU Memory: 24GB
 
-* Backend: vLLM
+\* Backend: vLLM
 
-* Connection: SSH tunnel
+\* Connection: SSH tunnel
 
-* API server: vLLM OpenAI-compatible server
+\* API server: vLLM OpenAI-compatible server
 
 
 
@@ -192,15 +192,15 @@ The results show that model size has a clear impact on inference performance:
 
 Larger model size
 
-&#x20;   ↓
+   ↓
 
 More computation per token
 
-&#x20;   ↓
+   ↓
 
 Higher latency
 
-&#x20;   ↓
+   ↓
 
 Lower QPS
 
