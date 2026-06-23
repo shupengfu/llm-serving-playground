@@ -31,6 +31,7 @@ LLM\_BASE\_URL = os.getenv("LLM\_BASE\_URL", "http://localhost:11434/v1")
 LLM\_API\_KEY = os.getenv("LLM\_API\_KEY", "ollama")
 
 LLM\_MODEL = os.getenv("LLM\_MODEL", "qwen2.5:0.5b")
+```
 
 ## 3. Local Ollama Configuration
 
