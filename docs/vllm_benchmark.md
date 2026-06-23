@@ -92,7 +92,7 @@ The goal is to compare inference latency and throughput across different model s
 
 | Model                      | Backend | GPU       | Max Model Length |
 
-| -------------------------- | ------- | --------- | ---------------: |
+| --------------------------: | -------: | ---------: | ---------------: |
 
 | Qwen/Qwen2.5-1.5B-Instruct | vLLM    | RTX 4090D |             8192 |
 
